@@ -1,14 +1,16 @@
 <?php
 //TODO add error handling
+ini_set('display_errors',1);
+ini_set('display_startuup_errors',1);
+error_reporting(E_ALL);
 
 //load the config from the same directory
 require('conf.php');
 echo "Loaded host: " . $host;
 
+$conn_string = "mysql:host=$host;dbname=$database;charset =utf8mb4";
 
-//new lines below 
 try{
-	$conn_string = "mysql:host=$host;dbname=$databasename;charset=utf8mb4";
 	$db = new PDO($conn_string, $username, $password);
 	echo "Connected";
 }
