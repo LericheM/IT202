@@ -19,6 +19,20 @@ try{
 	$stmt = $db->prepare($query);
 	$r = $stmt->execute();
 	echo "<br>" . $r . "<br>";
+	
+	$user = "JohnyDoe";
+	$pin = 1230;
+
+	//Note backticks ` for table/column names and single-quotes ' for string
+	$insert_query = "INSERT INTO `TestUsers`(`username`,`pin`) VALUES (:user,:pin)";
+	$stmt = $db->prepare($insert_query);
+	$r = $stmt->execute(['user' => $user,'pin' => $pin]);
+	
+	$select_query = "select * from `TestUsers` where username = :user";
+
+	$result = $stmt->fetch();
+	echo "<br><pre>" . var_export($result, true) . "</pre><br>";
+	
 }
 catch(Exception $e){
 	echo $e->getMessage();
