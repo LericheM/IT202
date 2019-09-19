@@ -38,7 +38,7 @@ try{
 
 	$select_query = "select * from `TestUsers` where username = :user";
 	$stmt = $db->prepare($select_query);
-	$r = $stmt->execute(array(":username"=> "Billy"));
+	$r = $stmt->execute(array(":user"=> "Billy"));
 	$result = $stmt->fetch(PDO::FETCH_ASSOC);
 	echo "<br><pre>" . var_export($result, true) . "</pre><br>";
 	
