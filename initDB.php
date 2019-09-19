@@ -37,8 +37,9 @@ try{
 	echo "<br>" . ($r>0?"Insert successful":"Insert failed") . "<br>";
 
 	$select_query = "select * from `TestUsers` where username = :user";
-
-	$result = $stmt->fetch($r);
+	$stmt = $db->prepare($select_query);
+	$r = $stmt->execute(array(":username"=> "Billy"));
+	$result = $stmt->fetch(PDO::FETCH_ASSOC);
 	echo "<br><pre>" . var_export($result, true) . "</pre><br>";
 	
 }
