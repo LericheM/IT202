@@ -38,7 +38,7 @@ try{
 
 	$select_query = "select * from `TestUsers` where username = :user";
 
-	$result = $stmt->fetch();
+	$result = $stmt->fetch($r);
 	echo "<br><pre>" . var_export($result, true) . "</pre><br>";
 	
 }
