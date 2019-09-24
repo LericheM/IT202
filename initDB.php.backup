@@ -6,46 +6,9 @@ error_reporting(E_ALL);
 //pull in config.php so we can access the variables from it
 require('conf.php');
 echo "Loaded Host: " . $host;
-
-
 $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 try{
-	foreach(glob("sql/*.sql") as $filename) {
-		//echo $filename
-		$sql[$filename]= file_get_contents($filename);
-		//echo $sql[$filename];
-
-	}
-	ksort($sql);
-
-	//connect to DB
 	$db = new PDO($conn_string, $username, $password);
-	//$db->setAttribute(PDO::ATTR_ERRMOD,);
-	foreach($sql as $key => $value){
-		echo "<br>Running: " . key;
-		$stmt = $db->prepare($value);
-		$result = $stmt->execute();
-		$error = $stmt->errorInfo();
-		if($error && $error[0] !== '0000') {
-			echo "<br>Error:<pre>" . var_export($error,true) . "</pre><br>";
-		}
-		echo "<br>$key result :" . ($result>0?"Success":"Fail") . "<br>";
-	}
-
-
-
-
-
-
-
-
-
-
-
-	/*
-	
-	
-	 $db = new PDO($conn_string, $username, $password);
 	echo "Connected";
 	$query = "create table if not exists `TestUsers`(
 		`id` int auto_increment not null,
@@ -79,8 +42,6 @@ try{
 	$result = $stmt->fetch(PDO::FETCH_ASSOC);
 	echo "<br><pre>" . var_export($result, true) . "</pre><br>";
 	
-	
-	 */
 }
 catch(Exception $e){
 	echo $e->getMessage();
