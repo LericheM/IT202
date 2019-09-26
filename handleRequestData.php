@@ -10,7 +10,7 @@ if(isset($_GET['number'])){
 }
 if(isset($_GET['add1'])){
 	$add1 = $_GET['add1'];
-}}
+}
 if(isset($_GET['add2'])){
 	$add2 = $_GET['add2'];
 }
