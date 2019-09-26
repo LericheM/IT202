@@ -29,4 +29,13 @@ if($word1 != NULL and $word2 != NULL){
 	$catW = $word1 . $word2;
 	echo "<br>". $catW;
 }
+echo "<br>" . "I've found when adding special characters to number
+values (I assume ints and floats behave the same here) if there is a
+special character separating the entirety of the number (1 + 1@2 would
+be 2 instead of 13) then addition will contain everything before the
+special character. If the data value is a string, then it seems to
+automatically add escape sequences even when I put the raw symbols in
+the data." ."<br>" . "If you assign a variable two different values the
+most recent value will overwrite the previous data."
+
 ?>
