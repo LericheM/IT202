@@ -14,8 +14,18 @@ if(isset($_GET['add1'])){
 if(isset($_GET['add2'])){
 	$add2 = $_GET['add2'];
 }
+if(isset($_GET['word1'])){
+	$word = $_GET["word1"];
+
+}
+if(isset($_GET['word2'])){
+	$word2 = $_GET['word2'];
+}
 if($add1 != NULL and $add2 != NULL){
 	$sum = $add1+$add2;
 	echo "<br> The sum of " .$add1." and ".$add2." is: ". $sum;
+}
+if($word1 != NULL and $word2 != NULL){
+	$catW = $word1 . $word2;
 }
 ?>
