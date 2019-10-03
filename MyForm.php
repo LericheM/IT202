@@ -10,7 +10,7 @@ function getName(){
 <body><?php getName();?>
 <form mode="GET" action="#">
 <input name = "name" type = "text" placeholder = "Enter your name"/>
-<input type="submit" value= "Try it"/>
+<input type="submit" value= "Confirm"/>
 </form>
 </body>
 </html>
