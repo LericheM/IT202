@@ -4,7 +4,7 @@
 
 </head>
 <body>
-    //Using help from w3schools.com tutorial on DOM Nodes
+    <!--Using help from w3schools.com tutorial on DOM Nodes-->
     <div id = "div1">
         <p id = 'first'>Mathew</p>
         <p id = 'last'>Leriche</p>
