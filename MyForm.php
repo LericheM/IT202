@@ -6,6 +6,7 @@ function getName(){
 }
 ?>
 <html>
+<!--comment-->
 <head></head>
 <body><?php getName();?>
 <form mode="GET" action="#">
