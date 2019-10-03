@@ -12,9 +12,10 @@
 
     <script>
         var div2 = document.createElement("div");
-	var div1 = document.getElementById("div1");
 	document.body.appendChild(div2);
+	div2.id = "div2";
 	var p1 = document.createElement("p");
+	p1.id = "p1";
 	p1.innerHTML = "new element added";
 	div2.appendChild(p1);
     </script>
