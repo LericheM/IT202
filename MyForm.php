@@ -18,6 +18,8 @@ function getName(){
 <input name = "passwd" type = "password" placeholder= "Enter a fake password"/>
 
 <label for="Yes">Yes</label>
+<input type="radio" name="radio" id="Yes" value="Yes"/>
+<label for="No">No</label>
 <input type="radio" name="radio" id="No" value="No"/>
 
 <select name="dropdown">
