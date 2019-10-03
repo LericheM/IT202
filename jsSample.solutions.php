@@ -12,8 +12,11 @@
 
     <script>
         var div2 = document.createElement("div");
-        var node = document.createTextMode("<p id = 'text'> new element added</p>");
-        div2.appendChild(node);
+	var div1 = document.getElementById("div1");
+	document.body.appendChild(div2);
+	var p1 = document.createElement("p");
+	p1.innerHTML = "new element added";
+	div2.appendChild(p1);
     </script>
 </body>
 
