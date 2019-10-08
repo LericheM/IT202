@@ -2,15 +2,18 @@
 ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-/*function getName(){
-	if(isset($_GET['name'])){
-		echo "<p>Hello, " . $_GET['name'] . "</p>";
+function getName(){
+	if(isset($_GET['username'])){
+		echo "<p>Hello, " . $_GET['username'] . "</p>";
 	}
-}*/
+	if(isset($_GET['password'])){
+		echo "<p>Your password is " . $_GET['username'] . "</p>";
+	}
+}
 ?>
 <html>
 <head></head>
-<body>
+<body><?php getName();?>
 <form name= "login" mode="POST" onsubmit= "return validateForm()">
 	<input name="username" type="text" 
 	placeholder="Enter your name" required/>
@@ -45,10 +48,15 @@ error_reporting(E_ALL);
 				for(i = 0;i < password.length; i++){
 					output += "*"
 				}
-				document.getElementById("after").innerHTML = "You entered: U: "+uname+"\n P:"
-				+ output;
+				document.getElementById("after").innerHTML = "You entered: U: "+uname+"\n P: "+output;
 			}
 		}
 	</script>
 </body>
 </html>
+
+<?php
+if(isset($_GET)){
+	echo "<br><pre>" . var_export($_GET, true) . "</pre><br>";
+}
+?>
