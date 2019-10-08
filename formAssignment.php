@@ -2,18 +2,10 @@
 ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-function getName(){
-	if(isset($_GET['username'])){
-		echo "<p>Hello, " . $_GET['username'] . "</p>";
-	}
-	if(isset($_GET['password'])){
-		echo "<p>Your password is " . $_GET['username'] . "</p>";
-	}
-}
 ?>
 <html>
 <head></head>
-<body><?php getName();?>
+<body>
 <form name= "login" mode="POST" onsubmit= "return validateForm()">
 	<input name="username" type="text" 
 	placeholder="Enter your name" required/>
