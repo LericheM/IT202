@@ -89,7 +89,7 @@ input { border: 1px solid black; }
 			}
 			else{
 				pv.style.display = "block";
-				pv.innerText = "Passwords don't match.";
+				alert("Passwords don't match.") ;
 				form.passwordConfirm.focus();
 				form.passwordConfirm.className = "error";
 				form.confirm.style = "border: 1px solid red;";
