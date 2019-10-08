@@ -2,6 +2,11 @@
 ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+function getName(){
+	if(isset($_GET['name'])){
+		echo "<p>Hello, " . $_GET['name'] . "</p>";
+	}
+}
 
 function checkPasswords(){
 	$passw = isset($_POST['password']);
@@ -21,6 +26,7 @@ function checkPasswords(){
 <html>
 <head></head>
 <body>
+<?php getName();?>
 <form name= "login" method="POST" onsubmit= " validateForm()">
 	<input name="username" type="text" 
 	placeholder="Enter your name" required/>
@@ -56,4 +62,8 @@ function checkPasswords(){
 </body>
 </html>
 <?php checkPasswords();?>
-
+<?php
+if(isset($_GET)){
+	echo "<br><pre>" . var_export($_GET, true) . "</pre><br>";
+}
+?>
