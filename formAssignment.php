@@ -14,7 +14,7 @@ function checkPasswords(){
 	$user = isset($_POST['username']);
 
 	if($passc == $passw){
-		echo "Successfully saved.";
+		echo "Successfully saved.".$user." ".$passw;
 		
 	}
 	else{
