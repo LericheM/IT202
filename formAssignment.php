@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 <html>
 <head></head>
 <body>
-<form name= "login" mode="POST" onsubmit= "return validateForm()">
+<form name= "login" method="POST" onsubmit= "return validateForm()">
 	<input name="username" type="text" 
 	placeholder="Enter your name" required/>
 	<!-- add password field-->
