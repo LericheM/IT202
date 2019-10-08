@@ -9,12 +9,10 @@ function getName(){
 }
 
 function checkPasswords(){
-	$passc = $_POST['password'];
-	$passw = $_POST['passwordConfirm'];
 	
 	if(isset($_POST['password']) && isset($_POST['passwordConfirm']) ){
 
-		if($passc == $passw){
+		if($_POST['password']==$_POST['passwordConfirm']){
 			echo "Successfully saved.";
 			
 		}
