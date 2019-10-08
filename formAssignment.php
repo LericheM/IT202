@@ -72,7 +72,7 @@ input { border: 1px solid black; }
 
 			let pv = document.getElementById("validation.password");
 
-			var email = documents.["login"]["email"].value;
+			var email = documents["login"]["email"].value;
 			var ev = document.getElemenetById("validation.email");
 			let succeeded = true;
 			if(email.indexOf('@') > -1){
