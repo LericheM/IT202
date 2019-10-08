@@ -83,7 +83,7 @@ input { border: 1px solid black; }
 				ev.innerText = "Please enter a valid email address";
 				succeeded = false;
 			}
-			if (password = pass2) {
+			if (password == pass2) {
 				pv.style.display = "none";
 				form.passwordConfirm.className = "noerror" 
 			}
