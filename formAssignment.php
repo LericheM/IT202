@@ -27,7 +27,14 @@ function checkPasswords(){
 <head></head>
 <body>
 <?php getName();?>
+<style>
+input { border: 1px solid black; }
+.error {border: 1px solid red;}
+.noerror {border: 1px solid black;}
+</style>
+<div style="margin-left: 50%; margin-right:50%;">
 <form name= "login" method="POST" onsubmit= " validateForm()">
+
 	<input name="username" type="text" 
 	placeholder="Enter your name" required/>
 	<!-- add password field-->
@@ -36,9 +43,14 @@ function checkPasswords(){
 	<!-- add confirm password field-->
 	<input type="password" name="passwordConfirm"
 	placeholder="Please confirm your passsword" required>
+	<span style="display:none;" id="validation.password"></span>
+
 	<!-- EMAIL -->
-	<input name="email" type="emai" placeholder="name@example.com"/>
+	<input type="email" name="email" 
+	placeholder="name@example.com"/>
+
 	<span id="validation.email" style="display:none;"></span>
+	
 
 
 	<!-- ensure passwords match before sending the form
@@ -52,10 +64,15 @@ function checkPasswords(){
 	<script>
 		function validateForm(){
 			var form = documents.forms[0];
-			var uname = document.forms["login"]["username"].value;
 			var password = document.forms["login"]["password"].value;
 			var pass2 = document.forms["login"]["passwordConfirm"].value;
-			var email = form.email.value;
+
+			console.log(password);
+			console.log(pass2);
+
+			let pv = document.getElementById("validation.password");
+
+			var email = documents.["login"]["email"].value;
 			var ev = document.getElemenetById("validation.email");
 			let succeeded = true;
 			if(email.indexOf('@') > -1){
@@ -66,17 +83,23 @@ function checkPasswords(){
 				ev.innerText = "Please enter a valid email address";
 				succeeded = false;
 			}
-			if (password != pass2) {
-				alert("Passwords must match!");
-				return false;
+			if (password = pass2) {
+				pv.style.display = "none";
+				form.passwordConfirm.className = "noerror" 
+			}
+			else{
+				pv.style.display = "block";
+				pv.innerText = "Passwords don't match.";
+				form.passwordConfirm.focus();
+				form.passwordConfirm.className = "error";
+				form.confirm.style = "border: 1px solid red;";
+				succeeded = false;
 			}
 			console.log(uname)
 			console.log(password)
 			return succeeded
 		}
 	</script>
-		<input name="email" type="emai" placeholder="name@example.com"/>
-		<span id="validation.email" style="display:none;"></span>
 </body>
 </html>
 <?php checkPasswords();?>
