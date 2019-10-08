@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 ?>
 <html>
 <head></head>
-<body><?php getName();?>
+<body>
 <form name= "login" mode="POST" onsubmit= "return validateForm()">
 	<input name="username" type="text" 
 	placeholder="Enter your name" required/>
