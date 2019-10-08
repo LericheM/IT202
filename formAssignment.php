@@ -49,6 +49,6 @@ error_reporting(E_ALL);
 
 <?php
 if(isset($_GET)){
-	echo "<br><pre>" . var_export($_GET, true) . "</pre><br>";
+	//echo "<br><pre>" . var_export($_GET, true) . "</pre><br>";
 }
 ?>
