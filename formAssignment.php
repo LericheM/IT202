@@ -24,7 +24,6 @@ error_reporting(E_ALL);
 	<!-- change form submit type to post, adjust php checks for change in type-->
 
 	<input type="submit" value="Submit"/>
-	<p id ='after'></p>
 </form>
 	<script>
 		function validateForm(){
@@ -44,6 +43,8 @@ error_reporting(E_ALL);
 			}
 		}
 	</script>
+		<p id ='after'></p>
+
 </body>
 </html>
 
