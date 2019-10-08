@@ -9,18 +9,18 @@ function getName(){
 }
 
 function checkPasswords(){
-	$passw = isset($_POST['password']);
-	$passc = isset($_POST['passwordConfirm']);
-	$user = isset($_POST['username']);
+	
+	if(isset($_POST['password']) && isset($_POST['passwordConfirm']) ){
 
-	if($passc == $passw){
-		echo "Successfully saved.";
-		
+		if($passc == $passw){
+			echo "Successfully saved.";
+			
+		}
+		else{
+			echo "Passwords do not match!";
+		}
 	}
-	else{
-		echo "Passwords do not match!";
-	}
-	}
+}
 
 ?>
 <html>
@@ -51,6 +51,7 @@ function checkPasswords(){
 </form>
 	<script>
 		function validateForm(){
+			var form = documents.forms[0];
 			var uname = document.forms["login"]["username"].value;
 			var password = document.forms["login"]["password"].value;
 			var pass2 = document.forms["login"]["passwordConfirm"].value;
@@ -80,7 +81,7 @@ function checkPasswords(){
 </html>
 <?php checkPasswords();?>
 <?php
-if(isset($_GET)){
-	echo "<br><pre>" . var_export($_GET, true) . "</pre><br>";
+if(isset($_POST)){
+	echo "<br><pre>" . var_export($_POST, true) . "</pre><br>";
 }
 ?>
