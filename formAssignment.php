@@ -2,11 +2,26 @@
 ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+function checkPasswords(){
+	$passw = isset($_POST['password']);
+	$passc = isset($_POST['passwordConfirm']);
+	$user = isset($_POST['username']);
+
+	if($passc == $passw){
+		echo "Successfully saved.";
+		
+	}
+	else{
+		echo "Passwords do not match!";
+	}
+	}
+
 ?>
 <html>
 <head></head>
 <body>
-<form name= "login" method="POST" onsubmit= "return validateForm()">
+<form name= "login" method="POST" onsubmit= " validateForm()">
 	<input name="username" type="text" 
 	placeholder="Enter your name" required/>
 	<!-- add password field-->
@@ -34,14 +49,11 @@ error_reporting(E_ALL);
 				alert("Passwords must match!");
 				return false;
 			}
-			
 			console.log(uname)
 			console.log(password)
-			
 		}
 	</script>
-		<p id ='after'></p>
-
 </body>
 </html>
+<?php checkPasswords();?>
 
