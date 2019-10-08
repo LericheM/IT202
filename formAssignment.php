@@ -34,12 +34,9 @@ error_reporting(E_ALL);
 				alert("Passwords must match!");
 				return false;
 			}
-			else{
-				output = "";
-				for(i = 0;i < password.length; i++){
-					output += "*"
-				}
-				document.getElementById("after").innerHTML = "You entered: U: "+uname+"\n P: "+output;
+			
+			console.log(uname)
+			console.log(password)
 			}
 		}
 	</script>
