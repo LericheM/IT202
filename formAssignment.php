@@ -52,9 +52,3 @@ error_reporting(E_ALL);
 	</script>
 </body>
 </html>
-
-<?php
-if(isset($_GET)){
-	//echo "<br><pre>" . var_export($_GET, true) . "</pre><br>";
-}
-?>
