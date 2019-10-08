@@ -37,7 +37,7 @@ error_reporting(E_ALL);
 			
 			console.log(uname)
 			console.log(password)
-			}
+			
 		}
 	</script>
 		<p id ='after'></p>
