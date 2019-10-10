@@ -39,7 +39,7 @@ function validate(){
 		//form.confirm.focus();
 		form.confirm.className = "error";
 		//form.confirm.style = "border: 1px solid red;";
-		return false;
+		succeeded = false;
 	}
 	var email = form.email.value;
 	var ev = document.getElementById("validation.email");
@@ -51,7 +51,7 @@ function validate(){
 	else{
 		ev.style.display = "block";
 		ev.innerText = "Please enter a valid email address";
-		return false;
+		suceeded = false;
 	}
 	/*
 	add validation for a proper selection from dropdown.
@@ -61,7 +61,7 @@ function validate(){
     if(selectVal == "-1"){
 				alert("Select another option!");
 			}
-	return true;	
+	return suceeded;	
 }
 </script>
 <style>
