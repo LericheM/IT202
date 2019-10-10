@@ -61,7 +61,7 @@ input { border: 1px solid black; }
 
 	<input type="submit" value="Submit"/>
 
-	<select name="drop" id="dropMenu">
+	<select name="dropMenu" id="drop">
 		<option value="select_option">-Select Option-</option>
 		<option value="x">X</option>
 		<option value="o">O</option>
