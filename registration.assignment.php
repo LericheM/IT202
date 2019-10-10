@@ -60,6 +60,7 @@ function validate(){
 	*/
     if(selectVal == "-1"){
 				alert("Select another option!");
+                succeeded = false;
 			}
 	return suceeded;	
 }
