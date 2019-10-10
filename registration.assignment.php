@@ -58,7 +58,7 @@ function validate(){
 	First element should be "Select One", and it should require that
 	some other value is selected in order to proceed
 	*/
-    if(selectVal == "select_option"){
+    if(selectVal == "-1"){
 				alert("Select another option!");
 			}
 	return true;	
@@ -84,9 +84,9 @@ input { border: 1px solid black; }
 
 <!-- Add dropdown element (something specific to your project) -->
 <select name="dropMenu" id="drop">
-		<option value="select_option">-Select Side-</option>
-		<option value="x">X</option>
-		<option value="o">O</option>
+		<option value="-1">-Select Side-</option>
+		<option value="0">X</option>
+		<option value="1">O</option>
 </select>
 <input type="submit" value="Try it"/>
 </form>
