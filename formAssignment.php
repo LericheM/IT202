@@ -71,8 +71,8 @@ input { border: 1px solid black; }
 	<script>
 		function validateForm(){
 			var form = documents.forms[0];
-			var password = document.forms["login"]["password"].value;
-			var pass2 = document.forms["login"]["passwordConfirm"].value;
+			var password = form.password.value;
+			var pass2 = form.passwordConfirm.value;
 
 			console.log(password);
 			console.log(pass2);
@@ -95,6 +95,7 @@ input { border: 1px solid black; }
 			if (password == pass2) {
 				pv.style.display = "none";
 				form.passwordConfirm.className = "noerror" 
+				succeeded = true;
 			}
 			else{
 				pv.style.display = "block";
