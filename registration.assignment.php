@@ -59,13 +59,9 @@ function validate(){
 	some other value is selected in order to proceed
 	*/
     if(selectVal == "select_option"){
-				alert("Please select a different option");
-				form.dropMenu.focus();
-				form.dropMenu.classname = "error";
-				for.dropMenu.style = "border: 1px solid red;";
-				succeeded = false;
+				alert("Select another option!");
 			}
-	return succeeded;	
+	return false;	
 }
 </script>
 <style>
