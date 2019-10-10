@@ -105,6 +105,7 @@ input { border: 1px solid black; }
 			}
 			if(selectVal == "select_option"){
 				succeeded = false;
+				alert("Please select a different option");
 			}
 			console.log(uname)
 			console.log(password)
