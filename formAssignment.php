@@ -61,6 +61,12 @@ input { border: 1px solid black; }
 
 	<input type="submit" value="Submit"/>
 </form>
+<select name="drop" id="dropMenu">
+	<option value="select_option">-Select Option-</option>
+	<option value="x">X</option>
+	<option value="o">O</option>
+</select>
+</div>
 	<script>
 		function validateForm(){
 			var form = documents.forms[0];
@@ -71,6 +77,8 @@ input { border: 1px solid black; }
 			console.log(pass2);
 
 			let pv = document.getElementById("validation.password");
+			var selectMenu = document.getElementById("dropMenu");
+			selectVal = selectMenu.value;
 
 			var email = documents["login"]["email"].value;
 			var ev = document.getElemenetById("validation.email");
@@ -93,6 +101,9 @@ input { border: 1px solid black; }
 				form.passwordConfirm.focus();
 				form.passwordConfirm.className = "error";
 				form.confirm.style = "border: 1px solid red;";
+				succeeded = false;
+			}
+			if(selectVal == "select_option"){
 				succeeded = false;
 			}
 			console.log(uname)
