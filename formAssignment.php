@@ -60,12 +60,13 @@ input { border: 1px solid black; }
 	<!-- change form submit type to post, adjust php checks for change in type-->
 
 	<input type="submit" value="Submit"/>
+
+	<select name="drop" id="dropMenu">
+		<option value="select_option">-Select Option-</option>
+		<option value="x">X</option>
+		<option value="o">O</option>
+	</select>
 </form>
-<select name="drop" id="dropMenu">
-	<option value="select_option">-Select Option-</option>
-	<option value="x">X</option>
-	<option value="o">O</option>
-</select>
 </div>
 	<script>
 		function validateForm(){
@@ -77,7 +78,7 @@ input { border: 1px solid black; }
 			console.log(pass2);
 
 			let pv = document.getElementById("validation.password");
-			var selectMenu = document.getElementById("dropMenu");
+			let selectMenu = form.dropMenu;
 			selectVal = selectMenu.value;
 
 			var email = documents["login"]["email"].value;
@@ -104,8 +105,11 @@ input { border: 1px solid black; }
 				succeeded = false;
 			}
 			if(selectVal == "select_option"){
-				succeeded = false;
 				alert("Please select a different option");
+				form.dropMenu.focus();
+				form.dropMenu.classname = "error";
+				for.dropMenu.style = "border: 1px solid red;";
+				succeeded = false;
 			}
 			console.log(uname)
 			console.log(password)
