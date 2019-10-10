@@ -25,7 +25,7 @@ function validate(){
 	console.log(password);
 	console.log(conf);
 	let pv = document.getElementById("validation.password");
-	let succeeded = true;
+	let suc = true;
     let selMenu = form.dropMenu;
     let selectVal = selMenu.value;
 	if(password == conf){
@@ -39,7 +39,7 @@ function validate(){
 		//form.confirm.focus();
 		form.confirm.className = "error";
 		//form.confirm.style = "border: 1px solid red;";
-		succeeded = false;
+		suc = false;
 	}
 	var email = form.email.value;
 	var ev = document.getElementById("validation.email");
@@ -51,7 +51,7 @@ function validate(){
 	else{
 		ev.style.display = "block";
 		ev.innerText = "Please enter a valid email address";
-		suceeded = false;
+		suc = false;
 	}
 	/*
 	add validation for a proper selection from dropdown.
@@ -60,9 +60,9 @@ function validate(){
 	*/
     if(selectVal == "-1"){
 				alert("Select another option!");
-                succeeded = false;
+                suc = false;
 			}
-	return suceeded;	
+	return suc;	
 }
 </script>
 <style>
