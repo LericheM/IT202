@@ -72,7 +72,7 @@
 <form onsubmit="return false;">
 
 <input name="email" type="email"/>
-<input name="emailconfirm" type="email" onchange = "validateForm(this,'email')"/>
+<input name="emailconfirm" type="email" onchange = "validateForm(this,'email');"/>
 <input name="password" type="password"/>
 <input name="passwordconfirm" type="password"/>
 <input name="username"/>
