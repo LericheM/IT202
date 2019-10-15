@@ -74,7 +74,7 @@
 <input name="email" type="email"/>
 <input name="emailconfirm" type="email" onchange= "validateForm(this,'email');"/>
 <input name="password" type="password"/>
-<input name="passwordconfirm" type="password"/>
+<input name="passwordconfirm" type="password" onchange= "validateForm(this,'password');"/>
 <input name="username"/>
 
 <input type="submit" value="Submit"/>
