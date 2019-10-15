@@ -3,12 +3,13 @@
 <head>
 <script>
   function validateForm(inputL, compL){
+    let checkL = document.getElementByName(compL);
     let name = inputL.name;
     let valID = "validation." +name;
     let valL = document.getElementById(valID);
     let value = inputL.value;
     let type = inputL.type;
-    if(value == compL.value){
+    if(value == checkL.value){
         if (type == "email" && "@" in value){
             if(valL && value){
               valL.remove();
@@ -71,7 +72,7 @@
 <form onsubmit="return false;">
 
 <input name="email" type="email"/>
-<input name="emailconfirm" type="email"/>
+<input name="emailconfirm" type="email" onchange = "validateForm(this,'email')"/>
 <input name="password" type="password"/>
 <input name="passwordconfirm" type="password"/>
 <input name="username"/>
