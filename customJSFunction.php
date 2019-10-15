@@ -21,6 +21,7 @@
               }
               if(!value){
                 valL.innerText = "Please enter an email";
+                console.log("Please enter an email")
                 return false;
               }
               valL.innerText = name +" has an invalid value";
