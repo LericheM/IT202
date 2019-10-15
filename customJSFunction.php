@@ -29,7 +29,7 @@
             }
             return false;
           }
-          elseif(type == "password"){
+          else if(type == "password"){
             if(valL && value){
               valL.remove();
             }
@@ -47,7 +47,7 @@
             }
 
           }
-          elseif(type == "username"){
+          else if(type == "username"){
             if(valL && value){
               valL.remove();
             }
