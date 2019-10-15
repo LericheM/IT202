@@ -7,8 +7,60 @@
     let valID = "validation." +name;
     let valL = document.getElementById(valID);
     let value = inputL.value;
-    if(value == compL){
-        
+    let type = inputL.type;
+    if(value == compL.value){
+        if (type == "email" && "@" in value){
+            if(valL && value){
+              valL.remove();
+            }
+            else{
+              if(!valL){
+                valL.document.createElement("span");
+                valL.id = vid;
+                document.body.appendChild(valL);
+              }
+              if(!value){
+                valL.innerText = "Please enter an email";
+                return false;
+              }
+              valL.innerText = name +" has an invalid value";
+            }
+            return false;
+          }
+          elseif(type == "password"){
+            if(valL && value){
+              valL.remove();
+            }
+            else{
+              if(!valL){
+                valL.document.createElement("span");
+                valL.id = vid;
+                document.body.appendChild(valL);
+              }
+              if(!value){
+                val.innerText = "Please enter a password";
+                return false;
+              }
+              valL.innerText = name +" is invalid";
+            }
+
+          }
+          elseif(type == "username"){
+            if(valL && value){
+              valL.remove();
+            }
+            else{
+              if(!valL){
+                valL.document.createElement("span");
+                valL.id = vid;
+                document.body.appendChild(valL);
+              }
+              if(!value){
+                valL.innerText = "Please enter a username";
+                return false;
+              }
+            }
+          } 
     }
   }
 </script>
