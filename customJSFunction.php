@@ -2,68 +2,40 @@
 <html>
 <head>
 <script>
-  function validateForm(inputL, compL){
-    let checkL = document.getElementByName(compL);
-    let name = inputL.name;
-    let valID = "validation." +name;
-    let valL = document.getElementById(valID);
-    let value = inputL.value;
-    let type = inputL.type;
-    if(value == checkL.value){
-        if (type == "email" && "@" in value){
-            if(valL && value){
-              valL.remove();
-            }
-            else{
-              if(!valL){
-                valL.document.createElement("span");
-                valL.id = vid;
-                document.body.appendChild(valL);
-              }
-              if(!value){
-                valL.innerText = "Please enter an email";
-                console.log("Please enter an email")
-                return false;
-              }
-              valL.innerText = name +" has an invalid value";
-            }
-            return false;
-          }
-          else if(type == "password"){
-            if(valL && value){
-              valL.remove();
-            }
-            else{
-              if(!valL){
-                valL.document.createElement("span");
-                valL.id = vid;
-                document.body.appendChild(valL);
-              }
-              if(!value){
-                val.innerText = "Please enter a password";
-                return false;
-              }
-              valL.innerText = name +" is invalid";
-            }
+  function isEmail(inputElement){
+    email = inputElement.value;
+    return "@" in email;
+    let errorCnt = 0;
+  }
+  function isEmpty(inputElement){
+    return inputElement.value == "";
+  }
+  function validateForm(inputL, otherName){
+    //this function should return a boolean stating validaty of form data
+    otherL = document.forms[0][otherName];
+    otherVal = otherL.value;
+    inputVal = inputL.value;
 
-          }
-          else if(type == "username"){
-            if(valL && value){
-              valL.remove();
-            }
-            else{
-              if(!valL){
-                valL.document.createElement("span");
-                valL.id = vid;
-                document.body.appendChild(valL);
-              }
-              if(!value){
-                valL.innerText = "Please enter a username";
-                return false;
-              }
-            }
-          } 
+    if(isEmpty(inputVal)){
+      //Data is empty string
+      console.log(inputElement.name + " does not contain a value");
+      return false;
     }
+    if(isEmail(inputVal)){
+      // passes email validatity and empty validity can return validity here
+      if(!isEmpty(inputVal)){
+        return (otherVal == inputVal);
+    }
+    }
+    else if(otherL.type == "password"){
+      if(!isEmpty(inputVal)){
+        return (otherVal == inputVal);
+      }
+    }
+    else{
+      return isEmpty(inputVal);
+    }
+
   }
 </script>
 </head>
