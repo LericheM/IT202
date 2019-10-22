@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+        #canvas {
+          width: 600px;
+          height: 400px;
+          border: 1px solid black;
+        }
+        </style>
+        <canvas 
+        id="canvas" width="600" height="400" tabindex="1"
+        ></canvas>
 <script>
 //Collect the sqaure game base with a few mods
 //Source: http://bencentra.com/code/2017/07/11/basic-html5-canvas-games.html
@@ -199,13 +209,6 @@ function draw() {
 menu();
 canvas.focus();
 </script>
-<style>#canvas {
-        width: 600px;
-        height: 400px;
-        border: 1px solid black;
-      }
-      </style>
-        <canvas id="canvas" width="600" height="400" tabindex="1"></canvas>
 
 </head>
 <body>
