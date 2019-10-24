@@ -1,6 +1,6 @@
 <?php
 function get_sample_users(){
-	require('config.php');
+	require('/conf.php');
 	$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	try{
 		$db = new PDO($conn_string, $username, $password);
