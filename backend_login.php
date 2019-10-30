@@ -16,7 +16,7 @@
             'pin' int default 0,
             PRIMARY KEY ('id')
         ) CHARACTER SET utf8 COLLATE utf8_general_ci";
-        $db->setAttribute(PDO::AFTER_ERRMODE,PDO::ERRMODE_WARNING);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         $stmt = $db->prepare($query);
         print_r($stmt->errorInfo());
         $r = $stmt->execute();
