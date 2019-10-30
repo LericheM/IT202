@@ -22,7 +22,7 @@ function get_players(){
         print_r($stmt->errorInfo());
         $r = $stmt->execute();
         echo "<br>". ($r>0?"Created table or already exists":"Failed to create table")."<br>";
-        unser($r);
+        unset($r);
 
         if(isset($_POST["user"])){
             $user = $_POST["user"];
