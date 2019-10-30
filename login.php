@@ -16,12 +16,17 @@ function get_sample_users(){
         and username = :usernamePlace";
 		$stmt = $db->prepare($select_query);
 		$r = $stmt->execute(array(":usernamePlace"=>$user_input,":passwdPlace"=>$user_pass));
-        $response = json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
-        if(count($response) >0){
-            return $response;
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($stmt->errorInfo()){
+            print_r($stmt->errorInfo());
         }
         else{
-            return "Error: not in database";
+            if($results["password"] == $_POST['pass']){
+                echo $results;
+            }
+            else{
+                echo "User or password is incorrect";
+            }
         }
 	}
 	catch(Exception $e){
