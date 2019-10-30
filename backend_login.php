@@ -40,7 +40,7 @@ function get_players(){
         }
     function lookup($name,$token){
         //using this function to check login credentials through database
-        
+        return null;
     }
 }
 ?>
