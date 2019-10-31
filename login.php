@@ -54,7 +54,7 @@ function get_sample_users(){
             let passfield = document.form[0].pass;
             function isEmpty(){
                 if (this.length <1){
-                    document.body.innerText = "Please enter a value";
+                    document.body.id.innerText = "Please enter a value";
                 }    
             }
             
@@ -62,12 +62,16 @@ function get_sample_users(){
     </script>
 </head>
 <body>
-</body>
+    <div id = "screenOut">
+            <p></p>
+    </div>
 <form action="#" method="post">
 
 <input type="text" name="username" oninput = "isEmpty()"id="username">
 <input type="password" name="pass" id="pass">
 <input type="submit" value="Login">
 </form>
+</body>
+
 </html>
 <?php get_sample_users?>
