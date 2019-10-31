@@ -19,7 +19,7 @@
 		$r = $stmt->execute();
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         if($results["token"] == $_POST['pass']){
-            echo "Welcome back !". $results["token"];
+            echo "Welcome back ". $results["username"]."!";
             echo "<br> Here is the database array: <br>";
             print_r($results);
         }
