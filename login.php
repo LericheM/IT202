@@ -50,8 +50,9 @@ function get_sample_users(){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <script>
-            let userfield = document.forms[0].username.value;
-            let passfield = document.forms[0].pass.value;
+            let form = document.forms[0];
+            let userfield = form.username.value;
+            let passfield =  form.pass.value;
             function isEmpty(){
                 if (this.length >1){
                     return false;
@@ -74,8 +75,8 @@ function get_sample_users(){
     </div>
 <form action="#" method="post" onsubmit ="validate()">
 
-<input type="text" name="username" oninput = "isEmpty()"id="username">
-<input type="password" name="pass" id="pass">
+<input type="text" name="username" oninput = "isEmpty()">
+<input type="password" name="pass" >
 <input type="submit" value="Login">
 </form>
 </body>
