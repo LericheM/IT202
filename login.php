@@ -24,7 +24,7 @@ function get_sample_users(){
         $stmt = $db->prepare($select_query);
 		$r = $stmt->execute([$user_input,$user_pass]);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo $results[0];
+        echo $results["username"];
         
             if($results["token"] == $_POST['pass']){
                 echo "Welcome back ". $user_input;
