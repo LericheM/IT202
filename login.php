@@ -1,16 +1,16 @@
 <?php
-function get_sample_users(){
 	ini_set('display_errors',1);
 	ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     $user_input;
     $user_pass;
-    if(isset($_POST["username"])){
+    if(isset($_POST["username"]) and isset($_POST["pass"])){
         $user_input = $_POST["username"];
-    }
-    if(isset($_POST["pass"])){
         $user_pass = $_POST["pass"];
+        get_sample_users();
     }
+    
+    function get_sample_users(){
 
 	require('conf.php');
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
@@ -40,10 +40,10 @@ function get_sample_users(){
         $response = "DB Error: " . $e;
         echo $response;
 	}
-
-
-
 }
+
+
+
 
 
 ?>
