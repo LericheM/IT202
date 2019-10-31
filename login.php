@@ -15,12 +15,9 @@ function get_sample_users(){
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	try{
 		$db = new PDO($conn_string, $username, $password);
-        $select_query = "select username,token 
-        from `Players` 
-        where token = ?
-        and username = ?";
+        $select_query = "select username,token from `Players` where token = ? ";
         $stmt = $db->prepare($select_query);
-		$r = $stmt->execute([$user_input,$user_pass]);
+		$r = $stmt->execute([$user_input]);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         print_r($results);
         if($stmt->errorInfo()){
