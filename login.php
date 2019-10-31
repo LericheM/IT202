@@ -58,7 +58,7 @@ function get_sample_users(){
                 }    
             }
             
-        }
+        
     </script>
 </head>
 <body>
