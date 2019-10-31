@@ -29,7 +29,7 @@ function get_sample_users(){
             echo "something went wrong";
         }
         else{
-            if($results["password"] == $_POST['pass']){
+            if($results["token"] == $_POST['pass']){
                 echo "Welcome back ". $user_input;
             }
             else{
