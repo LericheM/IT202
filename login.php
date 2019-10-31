@@ -23,7 +23,7 @@ function get_sample_users(){
         and username = ?";
         $stmt = $db->prepare($select_query);
 		$r = $stmt->execute([$user_input,$user_pass]);
-        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo $results["token"];
         
             if($results["token"] == $_POST['pass']){
