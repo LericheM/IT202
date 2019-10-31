@@ -30,7 +30,6 @@
             echo "<br> Here is the database array: <br>";
             print_r($results);
             echo "<br> Here is the data you entered: <br>";
-            echo $user_input;echo $user_pass;
         }
         
 	}
