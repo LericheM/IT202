@@ -4,6 +4,13 @@ function get_sample_users(){
 	ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
+    if(isset($_POST["username"])){
+        $user_input = $_POST["username"];
+    }
+    if(isset($_POST["pass"])){
+        $user_pass = $_POST["pass"];
+    }
+
 	require('conf.php');
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	try{
@@ -13,12 +20,6 @@ function get_sample_users(){
         where token = ?
         and username = ?";
         $stmt = $db->prepare($select_query);
-        if(isset($_POST["username"])){
-            $user_input = $_POST["username"];
-        }
-        if(isset($_POST["pass"])){
-            $user_pass = $_POST["pass"];
-        }
 		$r = $stmt->execute([$user_input,$user_pass]);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if($stmt->errorInfo()){
