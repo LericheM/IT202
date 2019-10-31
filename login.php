@@ -22,7 +22,7 @@ function get_sample_users(){
         $stmt = $db->prepare($select_query);
 		$r = $stmt->execute([$user_input,$user_pass]);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo $results;
+        print_r($results);
         if($stmt->errorInfo()){
             print_r($stmt->errorInfo());
             echo "something went wrong";
