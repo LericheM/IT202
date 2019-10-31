@@ -50,6 +50,7 @@ function get_sample_users(){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <script>
+        function onload(){
             let form = document.forms[0];
             let userfield = form.username.value;
             let passfield =  form.pass.value;
@@ -66,18 +67,18 @@ function get_sample_users(){
                 return false;
             }
             
-        
+        }
     </script>
 </head>
-<body>
+<body onload = "onload()">
     <div id = "screenOut">
             <p></p>
     </div>
 <form action="#" method="post" onsubmit ="validate()">
-
-<input type="text" name="username" oninput = "isEmpty()"/>
-<input type="password" name="pass" />
-<input type="submit" value="Login"/>
+<input type="text">
+<input type="text" name="username" oninput = "isEmpty()">
+<input type="password" name="pass" >
+<input type="submit" value="Login">
 </form>
 </body>
 
