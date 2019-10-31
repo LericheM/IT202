@@ -19,7 +19,6 @@ function get_sample_users(){
         $stmt = $db->prepare($select_query);
 		$r = $stmt->execute([$user_input]);
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
-        print_r($results);
         if($stmt->errorInfo()){
             print_r($stmt->errorInfo());
             echo "something went wrong";
