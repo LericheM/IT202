@@ -53,9 +53,16 @@ function get_sample_users(){
             let userfield = document.form[0].username;
             let passfield = document.form[0].pass;
             function isEmpty(){
-                if (this.length <1){
+                if (this.length >1){
+                    return false;
+                }
+                else{
                     document.body.id.innerText = "Please enter a value";
+                    return true;
                 }    
+            }
+            function validate(){
+                return false;
             }
             
         
@@ -65,7 +72,7 @@ function get_sample_users(){
     <div id = "screenOut">
             <p></p>
     </div>
-<form action="#" method="post">
+<form action="#" method="post" onsubmit ="validate()">
 
 <input type="text" name="username" oninput = "isEmpty()"id="username">
 <input type="password" name="pass" id="pass">
