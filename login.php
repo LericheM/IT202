@@ -3,8 +3,12 @@ function get_sample_users(){
 	ini_set('display_errors',1);
 	ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    $user_input = $_POST['username'];
-    $user_pass = $_POST['pass'];
+    if(isset($_POST["username"])){
+        $user_input = $_POST['username'];
+    }
+    if(isset($_POST["pass"])){
+        $user_pass = $_POST['pass'];
+    }
 	
 	require('conf.php');
 	$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
@@ -22,7 +26,7 @@ function get_sample_users(){
         }
         else{
             if($results["password"] == $_POST['pass']){
-                echo $results;
+                echo "Welcome back ". $user_input;
             }
             else{
                 echo "User or password is incorrect";
@@ -39,3 +43,20 @@ function get_sample_users(){
 
 
 ?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+</head>
+<body>
+</body>
+<form action="#" method="post">
+
+<input type="text" name="username" id="username">
+<input type="password" name="pass" id="pass">
+<input type="submit" value="Login">
+</form>
+</html>
+<?php get_sample_users?>
