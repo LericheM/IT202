@@ -26,6 +26,7 @@ function get_sample_users(){
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if($stmt->errorInfo()){
             print_r($stmt->errorInfo());
+            echo "something went wrong";
         }
         else{
             if($results["password"] == $_POST['pass']){
