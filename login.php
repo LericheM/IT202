@@ -44,13 +44,7 @@ function get_sample_users(){
 
 ?>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-    <script>
-        function onload(){
+<script>
             let form = document.forms[0];
             let userfield = form.username.value;
             let passfield =  form.pass.value;
@@ -67,8 +61,14 @@ function get_sample_users(){
                 return false;
             }
             
-        }
+        
     </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    
 </head>
 <body onload = "onload()">
     <div id = "screenOut">
