@@ -6,11 +6,9 @@ function get_sample_users(){
 
     if(isset($_POST["username"])){
         $user_input = $_POST["username"];
-        echo $user_input;
     }
     if(isset($_POST["pass"])){
         $user_pass = $_POST["pass"];
-        echo $user_pass;
     }
 
 	require('conf.php');
@@ -24,6 +22,7 @@ function get_sample_users(){
         $stmt = $db->prepare($select_query);
 		$r = $stmt->execute([$user_input,$user_pass]);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo $results;
         if($stmt->errorInfo()){
             print_r($stmt->errorInfo());
             echo "something went wrong";
