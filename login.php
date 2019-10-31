@@ -75,9 +75,9 @@ function get_sample_users(){
     </div>
 <form action="#" method="post" onsubmit ="validate()">
 
-<input type="text" name="username" oninput = "isEmpty()">
-<input type="password" name="pass" >
-<input type="submit" value="Login">
+<input type="text" name="username" oninput = "isEmpty()"/>
+<input type="password" name="pass" />
+<input type="submit" value="Login"/>
 </form>
 </body>
 
