@@ -12,7 +12,13 @@ function get_sample_users(){
         from `Players` 
         where token = :passwdPlace
         and username = :usernamePlace";
-		$stmt = $db->prepare($select_query);
+        $stmt = $db->prepare($select_query);
+        if(isset($_POST["username"])){
+            $user_input = $_POST["username"];
+        }
+        if(isset($_POST["pass"])){
+            $user_pass = $_POST["pass"];
+        }
 		$r = $stmt->execute([":usernamePlace"=>$user_input,":passwdPlace"=>$user_pass]);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if($stmt->errorInfo()){
