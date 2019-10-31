@@ -50,8 +50,8 @@ function get_sample_users(){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <script>
-            let userfield = document.form[0].username;
-            let passfield = document.form[0].pass;
+            let userfield = document.forms[0].username;
+            let passfield = document.forms[0].pass;
             function isEmpty(){
                 if (this.length >1){
                     return false;
