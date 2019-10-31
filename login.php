@@ -53,7 +53,7 @@ function get_sample_users(){
     <div id = "screenOut">
             <p></p>
     </div>
-<form action="#" onsubmit="return false" method="post">
+<form action="#" method="post">
 <input type="text" name="username">
 <input type="password" name="pass" >
 <input type="submit" value="Login">
