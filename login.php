@@ -3,6 +3,8 @@ function get_sample_users(){
 	ini_set('display_errors',1);
 	ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+    $flag = false;
+    $flag2 = false;
     if(isset($_POST["username"])){
         $user_input = $_POST['username'];
         $flag = true;
