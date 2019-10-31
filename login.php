@@ -5,13 +5,15 @@ function get_sample_users(){
     error_reporting(E_ALL);
     if(isset($_POST["username"])){
         $user_input = $_POST['username'];
+        $flag = true;
     }
     if(isset($_POST["pass"])){
         $user_pass = $_POST['pass'];
+        $flag2 = true;
     }
-	
 	require('conf.php');
-	$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
+    $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
+    if(flag & flag2){
 	try{
 		$db = new PDO($conn_string, $username, $password);
         $select_query = "select username,token 
@@ -37,7 +39,7 @@ function get_sample_users(){
         $response = "DB Error: " . $e;
         return $response;
 	}
-   
+}
 
 
 }
