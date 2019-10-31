@@ -21,7 +21,7 @@ function get_sample_users(){
 		$r = $stmt->execute([$user_input]);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if($stmt->errorInfo()){
-            print_r($stmt->errorInfo());
+            print_r($results);
             echo "something went wrong FUCK";
         }
         else{
