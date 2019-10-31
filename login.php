@@ -49,12 +49,23 @@ function get_sample_users(){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
+    <script>
+            let userfield = document.form[0].username;
+            let passfield = document.form[0].pass;
+            function isEmpty(){
+                if (this.length <1){
+                    document.body.innerText = "Please enter a value";
+                }    
+            }
+            
+        }
+    </script>
 </head>
 <body>
 </body>
 <form action="#" method="post">
 
-<input type="text" name="username" id="username">
+<input type="text" name="username" oninput = "isEmpty()"id="username">
 <input type="password" name="pass" id="pass">
 <input type="submit" value="Login">
 </form>
