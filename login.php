@@ -19,22 +19,23 @@ function get_sample_users(){
         where token = :passwdPlace
         and username = :usernamePlace";
 		$stmt = $db->prepare($select_query);
-		$r = $stmt->execute(array(":usernamePlace"=>$user_input,":passwdPlace"=>$user_pass));
+		$r = $stmt->execute([":usernamePlace"=>$user_input,":passwdPlace"=>$user_pass]);
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         if($stmt->errorInfo()){
             print_r($stmt->errorInfo());
         }
         else{
             if($results["password"] == $_POST['pass']){
-                echo "Welcome back ". $user_input;
+                return "Welcome back ". $user_input;
             }
             else{
-                echo "User or password is incorrect";
+                return "User or password is incorrect";
             }
         }
 	}
 	catch(Exception $e){
-		$response = "DB Error: " . $e;
+        $response = "DB Error: " . $e;
+        return $response;
 	}
    
 
