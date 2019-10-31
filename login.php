@@ -21,8 +21,8 @@ function get_sample_users(){
 		$r = $stmt->execute();
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         if($stmt->errorInfo()){ 
-            print_r($results);
-            echo "something went wrong FUCK";
+            print_r($errorInfo);
+            echo "something went wrong";
         }
         else{
             if($results["token"] == $_POST['pass']){
