@@ -15,7 +15,7 @@ function get_sample_users(){
     }
 	require('conf.php');
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
-    if(flag & flag2){
+    if($flag & $flag2){
 	try{
 		$db = new PDO($conn_string, $username, $password);
         $select_query = "select username,token 
