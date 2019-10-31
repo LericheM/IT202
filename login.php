@@ -44,25 +44,6 @@ function get_sample_users(){
 
 ?>
 <html lang="en">
-<script>
-            let form = document.forms[0];
-            let userfield = form.username.value;
-            let passfield =  form.pass.value;
-            function isEmpty(){
-                if (this.length >1){
-                    return false;
-                }
-                else{
-                    document.body.id.innerText = "Please enter a value";
-                    return true;
-                }    
-            }
-            function validate(){
-                return false;
-            }
-            
-        
-    </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,17 +51,17 @@ function get_sample_users(){
     <title>Login</title>
     
 </head>
-<body onload = "onload()">
+<body >
     <div id = "screenOut">
             <p></p>
     </div>
-<form action="#" method="post" onsubmit ="validate()">
+<form action="#" method="post">
 <input type="text">
-<input type="text" name="username" oninput = "isEmpty()">
+<input type="text" name="username">
 <input type="password" name="pass" >
 <input type="submit" value="Login">
 </form>
 </body>
 
 </html>
-<?php get_sample_users?>
+<?php get_sample_users()?>
