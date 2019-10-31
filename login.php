@@ -10,8 +10,8 @@ function get_sample_users(){
 		$db = new PDO($conn_string, $username, $password);
         $select_query = "select username,token 
         from `Players` 
-        where token = :passwdPlace
-        and username = :usernamePlace";
+        where token = ?
+        and username = ?";
         $stmt = $db->prepare($select_query);
         if(isset($_POST["username"])){
             $user_input = $_POST["username"];
@@ -19,7 +19,7 @@ function get_sample_users(){
         if(isset($_POST["pass"])){
             $user_pass = $_POST["pass"];
         }
-		$r = $stmt->execute(["usernamePlace"=>$user_input,"passwdPlace"=>$user_pass]);
+		$r = $stmt->execute([$user_input,$user_pass]);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if($stmt->errorInfo()){
             print_r($stmt->errorInfo());
