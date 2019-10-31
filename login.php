@@ -24,15 +24,18 @@ function get_sample_users(){
         $stmt = $db->prepare($select_query);
 		$r = $stmt->execute([$user_input,$user_pass]);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo $results["1"];
-        
+        if($stmt->errorInfo()){
+            print_r($stmt->errorInfo());
+            echo "something went wrong";
+        }
+        else{
             if($results["token"] == $_POST['pass']){
                 echo "Welcome back ". $user_input;
             }
             else{
                 echo "User or password is incorrect";
             }
-        
+        }
 	}
 	catch(Exception $e){
         $response = "DB Error: " . $e;
