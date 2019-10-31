@@ -62,4 +62,3 @@
 </body>
 
 </html>
-<?php get_sample_users()?>
