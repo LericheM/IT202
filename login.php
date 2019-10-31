@@ -19,16 +19,14 @@
 		$r = $stmt->execute();
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         if($results["token"] == $_POST['pass']){
-            echo "Welcome back ". $result["token"];
+            echo "Welcome back !". $results["token"];
             echo "<br> Here is the database array: <br>";
             print_r($results);
-            echo "<br> Here is the data you entered: <br>";
         }
         else{
             echo "User or password is incorrect";
             echo "<br> Here is the database array: <br>";
             print_r($results);
-            echo "<br> Here is the data you entered: <br>";
         }
         
 	}
