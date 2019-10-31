@@ -19,7 +19,7 @@ function get_sample_users(){
         if(isset($_POST["pass"])){
             $user_pass = $_POST["pass"];
         }
-		$r = $stmt->execute([":usernamePlace"=>$user_input,":passwdPlace"=>$user_pass]);
+		$r = $stmt->execute(["usernamePlace"=>$user_input,"passwdPlace"=>$user_pass]);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if($stmt->errorInfo()){
             print_r($stmt->errorInfo());
