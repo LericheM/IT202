@@ -15,10 +15,10 @@ function get_sample_users(){
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	try{
 		$db = new PDO($conn_string, $username, $password);
-        $select_query = "select username from `Players` where username = ? ";
+        $select_query ='SELECT username FROM `Players` WHERE username = ? ';
         $stmt = $db->prepare($select_query);
 		$r = $stmt->execute([$user_input]);
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
         print_r($results);
         if($stmt->errorInfo()){
             print_r($stmt->errorInfo());
