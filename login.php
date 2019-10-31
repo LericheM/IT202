@@ -18,9 +18,9 @@ function get_sample_users(){
 		$db = new PDO($conn_string, $username, $password);
         $select_query = "SELECT * FROM Players WHERE username = 'spade'";
         $stmt = $db->prepare($select_query);
-		$r = $stmt->execute([$user_input]);
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if($stmt->errorInfo()){
+		$r = $stmt->execute();
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($stmt->errorInfo()){ 
             print_r($results);
             echo "something went wrong FUCK";
         }
