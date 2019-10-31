@@ -22,11 +22,13 @@
             echo "Welcome back ". $results["username"]."!";
             echo "<br> Here is the database array: <br>";
             print_r($results);
+            echo "<br> You entered:". $results["username"]."<br>";
         }
         else{
             echo "User or password is incorrect";
             echo "<br> Here is the database array: <br>";
             print_r($results);
+            echo"<br> You entered:". $user_input."<br>";
         }
         
 	}
