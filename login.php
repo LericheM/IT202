@@ -14,9 +14,9 @@
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	try{
 		$db = new PDO($conn_string, $username, $password);
-        $select_query = "SELECT * FROM Players WHERE username = 'spade'";
+        $select_query = "SELECT * FROM Players WHERE username = :spade";
         $stmt = $db->prepare($select_query);
-		$r = $stmt->execute();
+		$r = $stmt->execute(array(":spade"=>$user_input));
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         if($results["token"] == $_POST['pass']){
             echo "Welcome back ". $results["username"]."!";
