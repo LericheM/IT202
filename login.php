@@ -5,10 +5,10 @@
     if(isset($_POST["username"]) and isset($_POST["pass"])){
         $user_input = $_POST["username"];
         $user_pass = $_POST["pass"];
-        get_sample_users();
+        get_sample_users($user_input,$user_pass);
     }
     
-    function get_sample_users(){
+    function get_sample_users($user_input,$user_pass){
 
 	require('conf.php');
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
