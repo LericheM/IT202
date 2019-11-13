@@ -3,10 +3,12 @@ ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 if(isset($_POST["username"]) and isset($_POST["pass"])){
+    if($_POST[""])
     $user_input = $_POST["username"];
     $user_pass = $_POST["pass"];
 }
 require('conf.php');
+function add_user(){
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	try{
         $db = new PDO($conn_string, $username, $password);
@@ -22,6 +24,7 @@ require('conf.php');
         $response = "DB Error: " .$e;
         echo $response;
     }
+}
 ?>
 <html lang="en">
 <head>
@@ -32,16 +35,10 @@ require('conf.php');
   crossorigin="anonymous"></script>
 
   <script>
-  $(document).ready(function(){
-      
-  });
   </script>
     
 </head>
 <body >
-    <div id = "screenOut">
-            <p></p>
-    </div>
 <form action="#" method="post">
 <input type="text" name="username">
 <input type="password" name="pass" >
