@@ -23,8 +23,6 @@ function add_user($uname,$pass){
         VALUES (:usr,:pas)";
         $stmt = $db->prepare($insert_query);
         $r = $stmt->execute([":usr"=>$uname,":pas"=>$pass]);
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        print_r($results);
 
         echo "New user created!";
     }
