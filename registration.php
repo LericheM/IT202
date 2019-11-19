@@ -3,7 +3,6 @@ ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 if(isset($_POST["username"]) and isset($_POST["pass"])){
-    if($_POST[""])
     $user_input = $_POST["username"];
     $user_pass = $_POST["pass"];
     $user_passC = $_POST["confirm"];
