@@ -56,7 +56,9 @@ function add_user($uname,$pass){
         document.forms[0]["pass"].style = "border: 3px solid red;"
       }
       else{
-        document.forms[0]["confirm"].style = "weinitial;"
+          div1.innerText = "";
+        document.forms[0]["confirm"].style = "initial;";
+        document.forms[0]["pass"].style = "initial";
       }
   }
     
