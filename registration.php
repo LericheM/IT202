@@ -52,10 +52,11 @@ function add_user($uname,$pass){
       if(pass != confirm)
       {
         div1.innerText = "Passwords don't match!";
-        document.forms[0]["confirm"].style = "border: 1px solid red;";
+        document.forms[0]["confirm"].style = "border: 3px solid red;";
+        document.forms[0]["password"].style = "border: 3px solid red;"
       }
       else{
-        document.forms[0]["confirm"].style = "initial;"
+        document.forms[0]["confirm"].style = "weinitial;"
       }
   }
     
