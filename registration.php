@@ -14,8 +14,8 @@ if(isset($_POST["username"]) and isset($_POST["pass"])){
         echo "Passwords don't match! User not created!";
     }
 }
-require('conf.php');
 function add_user($uname,$pass){
+    require('conf.php');
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	try{
         $db = new PDO($conn_string, $username, $password);
