@@ -23,10 +23,17 @@
             //verify password
             if(password_verify($user_pass, $results['token'])){
                 echo "Welcome back ". $results["username"]."!";
+                
+                $userArr = array("id" => results['id]'],
+                "name"=>$results["username"]);
+                $_SESSION['user']= $userArr;
+                header("Location:");
+
                 // echo "<br> Here is the database array: <br>";
                 // print_r($results);
                 // echo"<br> You entered:". $_POST["username"]."<br>";
             }
+
         }
         else{
             echo "User or password is incorrect";
