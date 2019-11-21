@@ -14,15 +14,19 @@
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	try{
 		$db = new PDO($conn_string, $username, $password);
-        $select_query = "SELECT * FROM Players WHERE username = :spade";
+        $select_query = "SELECT * FROM Players WHERE username = :usr";
         $stmt = $db->prepare($select_query);
-		$r = $stmt->execute(array(":spade"=>$user_input));
+		$r = $stmt->execute(array(":usr"=>$user_input));
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
-        if($results["token"] == $_POST['pass']){
-            echo "Welcome back ". $results["username"]."!";
-            echo "<br> Here is the database array: <br>";
-            print_r($results);
-            echo"<br> You entered:". $_POST["username"]. " pass: " . $_POST["pass"]."<br>";
+        //print_r($stmt->errorInfor());
+        if($results && count($results)>0){
+            //verify password
+            if(password_verify($user_pass, $results['token'])){
+                echo "Welcome back ". $results["username"]."!";
+                echo "<br> Here is the database array: <br>";
+                print_r($results);
+                echo"<br> You entered:". $_POST["username"]."<br>";
+            }
         }
         else{
             echo "User or password is incorrect";
