@@ -18,21 +18,18 @@
         $stmt = $db->prepare($select_query);
 		$r = $stmt->execute(array(":usr"=>$user_input));
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
-        //print_r($stmt->errorInfor());
+        // print_r($stmt->errorInfor());
         if($results && count($results)>0){
             //verify password
             if(password_verify($user_pass, $results['token'])){
                 echo "Welcome back ". $results["username"]."!";
-                echo "<br> Here is the database array: <br>";
-                print_r($results);
-                echo"<br> You entered:". $_POST["username"]."<br>";
+                // echo "<br> Here is the database array: <br>";
+                // print_r($results);
+                // echo"<br> You entered:". $_POST["username"]."<br>";
             }
         }
         else{
             echo "User or password is incorrect";
-            echo "<br> Here is the database array: <br>";
-            print_r($results);
-            echo"<br> You entered:". $_POST["username"]."<br>";
         }
         
 	}
