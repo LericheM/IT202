@@ -18,11 +18,12 @@ function add_user($uname,$pass){
     require('conf.php');
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	try{
+        $hash = password_hash($pass, PASSWORD_BCRYPT);
         $db = new PDO($conn_string, $username, $password);
         $insert_query = "INSERT INTO `Players` (username,token)
         VALUES (:usr,:pas)";
         $stmt = $db->prepare($insert_query);
-        $r = $stmt->execute([":usr"=>$uname,":pas"=>$pass]);
+        $r = $stmt->execute([":usr"=>$uname,":pas"=>$hash]);
 
         echo "New user created!";
     }
