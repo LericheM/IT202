@@ -28,6 +28,7 @@
                 "name"=>$results["username"]);
                 $_SESSION['user']= $userArr;
                 header("Location:");
+                // TODO: FINISH REROUTING HERE 
 
                 // echo "<br> Here is the database array: <br>";
                 // print_r($results);
