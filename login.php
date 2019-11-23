@@ -27,7 +27,7 @@
                 $userArr = array("id" => results['id]'],
                 "name"=>$results["username"]);
                 $_SESSION['user']= $userArr;
-                header("Location:");
+                header("Location: landing.php");
                 // TODO: FINISH REROUTING HERE 
 
                 // echo "<br> Here is the database array: <br>";
