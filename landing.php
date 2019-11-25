@@ -6,9 +6,8 @@ include_once("functions.php");
 <head>
     <section id= "top">
         Hey there! <?php
-        if(check_sesh()){
             $name = get_username();
-            echo "Hello ". $name;
+            echo $name;
         }else{
             echo"Guest!";
         }
