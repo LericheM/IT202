@@ -13,4 +13,7 @@ function fetch_id(){
         return $_SESSION['user']['id'];
     }
 }
+if(isset($_POST["destination"])){
+    
+}
 ?>
