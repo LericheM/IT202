@@ -2,7 +2,7 @@
 //Borrowed helper function structure from Toegel
 function get_username(){
     if($_SESSION['user']){
-        echo $_SESSION['user']['name'];
+        return $_SESSION['user']['name'];
     }
 }
 function check_sesh(){
