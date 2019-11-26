@@ -8,7 +8,7 @@ include_once("./functions.php");
     <section id= "top">
         Hey there <?php get_username();?>!
     </section>
-    <!-- This section was taken from a previous assignment with HTML5 -->
+    <!-- This section.was taken from a previous assignment with HTML5 -->
     <script>
 	function queryParam(){
 		var params = new URLSearchParams(location.search);
