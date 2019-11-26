@@ -4,6 +4,9 @@ function get_username(){
     if($_SESSION['user']){
         echo $_SESSION['user']['name'];
     }
+    else{
+        echo "Session Missing!";
+    }
 }
 function check_sesh(){
     return isset($_SESSION);
