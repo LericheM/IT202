@@ -24,7 +24,7 @@
             if(password_verify($user_pass, $results['token'])){
                 echo "Welcome back ". $results["username"]."!";
                 
-                $userArr = array("id" => results['id]'],
+                $userArr = array("id" => $results['id'],
                 "name"=>$results["username"]);
                 $_SESSION['user']= $userArr;
                 //header("Location: landing.php");
