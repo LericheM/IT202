@@ -5,10 +5,7 @@ include_once("./functions.php");
 <html>
 <head>
     <section id= "top">
-        Hey there <?php
-            $name = get_username();
-            echo $name;
-        ?>!
+        Hey there <?php get_username();?>!
     </section>
 
 </head>
