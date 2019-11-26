@@ -6,9 +6,8 @@ include_once("./functions.php");
 <head>
     <section id= "top">
         Hey there <?php
-            //get_username();
-            //echo $name;
-            get_username();
+            $name = get_username();
+            echo $name;
         ?>!
     </section>
 
