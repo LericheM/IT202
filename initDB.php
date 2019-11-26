@@ -22,7 +22,7 @@ try{
 	$db = new PDO($conn_string, $username, $password);
 	//$db->setAttribute(PDO::ATTR_ERRMOD,);
 	foreach($sql as $key => $value){
-		echo "<br>Running: " . key;
+		echo "<br>Running: " . $key;
 		$stmt = $db->prepare($value);
 		$result = $stmt->execute();
 		$error = $stmt->errorInfo();
