@@ -8,9 +8,6 @@ function get_username(){
         echo "Session Missing!";
     }
 }
-function check_sesh(){
-    return isset($_SESSION);
-}
 function fetch_id(){
     if($_SESSION['user']){
         return $_SESSION['user']['id'];

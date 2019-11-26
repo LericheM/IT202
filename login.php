@@ -32,7 +32,7 @@
                 // echo var_export($userArr, true);
                 // echo var_export($_SESSION, true);
 
-                // TODO: FINISH REROUTING HERE 
+                // TODO: HANDLE USERNAME CORRECT PASSWORD WRONG
 
                 // echo "<br> Here is the database array: <br>";
                 // print_r($results);
@@ -59,37 +59,6 @@
 <html lang="en">
 <head>
     <title>Login</title>
-    <!-- <script>
-    function loginJax(method,destination){
-        let xhttp = new XMLHTTPRequest();
-        method = method.toUpperCase();
-        if(data){
-            data += "&";
-        }
-        else{
-            date = "";
-        }
-        xhttp.onreadystatechange = function(){
-            if(this.readyState ==4&&this.status == 200){
-                destination.innerHTML = this.responseText;
-            }
-        }
-        xhttp.open(method, "functions.php",true);
-        if(method == "POST"){
-            xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        }
-        if(data){
-            xhttp.send(destination);
-        }
-        else{
-            xhttp.send();
-        }
-    }
-    function loginMessage(){
-        let ele = document.getElementById("screenOut");
-        loginJax("POST",ele);
-    }
-    </script> -->
 </head>
 <body >
     <div id = "screenOut">
