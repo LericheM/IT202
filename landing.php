@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("./functions.php");
 
 ?>
@@ -6,7 +7,6 @@ include_once("./functions.php");
 <head>
     <section id= "top">
     <?php
-    session_start();
     echo "We found: " . var_export($_SESSION['user'], true);
     ?>
         Hey there <?php get_username();?>!
