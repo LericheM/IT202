@@ -28,7 +28,7 @@
                 "name"=>$results["username"]);
                 $_SESSION['user']= $userArr;
                 //header("Location: landing.php");
-                echo var_export($user, true);
+                echo var_export($userArr, true);
                 echo var_export($_SESSION, true);
 
                 // TODO: FINISH REROUTING HERE 
