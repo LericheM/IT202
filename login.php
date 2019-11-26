@@ -94,7 +94,7 @@
     <div id = "screenOut">
             <p></p>
     </div>
-<form action="#" method="post">
+<form method="post">
 <input type="text" name="username">
 <input type="password" name="pass" >
 <input type="submit" value="Login">
