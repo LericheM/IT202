@@ -90,15 +90,14 @@ canvas.addEventListener('keyup', function(event) {
 // Show the start menu
 function menu() {
   erase();
-  canvas.removeEventListener('click', menu);
   context.fillStyle = '#000000';
   context.font = '36px Arial';
   context.textAlign = 'center';
-  context.fillText('Collect the Square!', canvas.width / 2, canvas.height / 4);
+  context.fillText('Tic Tac Toe!', canvas.width / 2, canvas.height / 4);
   context.font = '24px Arial';
   context.fillText('Click to Start', canvas.width / 2, canvas.height / 2);
   context.font = '18px Arial'
-  context.fillText('Use the arrow keys to move', canvas.width / 2, (canvas.height / 4) * 3);
+  context.fillText('click on the box to play your turn', canvas.width / 2, (canvas.height / 4) * 3);
   // Start the game on a click
   canvas.addEventListener('click', startGame);
 }
