@@ -63,7 +63,7 @@
   }
 
   function render(){
-    board.foreach(function(mark,index){
+    board.forEach(function(mark,index){
       console.log(mark,index);
     });
   }
