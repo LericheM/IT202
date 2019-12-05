@@ -15,7 +15,7 @@
     ];
   
   document.getElementById('board').addEventListener('click', handleTurn);
-
+//todo add back h2 header!
   function initBoard(){
     board = [
       "","","",
@@ -43,7 +43,7 @@ messages.textContent = win === 'T' ? `Tie!` : win ? `${win} wins the game!` : `I
 
   function render(){
     board.forEach(function(mark,index){
-      squares[index].textContent = mark ;
+      squares[index].textContent = mark ;``
     });
   }
   function handleTurn(event){
