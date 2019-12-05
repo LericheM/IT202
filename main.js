@@ -26,7 +26,7 @@
     });
     board[idx] = turn;
 
-    turn = turn === 'X' ? 'O' : 'X';
+    turn = turn === 'x' ? 'o' : 'x';
 
 
     console.log(board);
