@@ -53,6 +53,12 @@
         ></canvas>
 <script>
   let board;
+  let turn = 'x';
+
+  const squares = Array.from(document.querySelectorAll('#board div'));
+  
+  document.getElementById('board').addEventListener('click', handleTurn);
+
   function initBoard(){
     board = [
       "","","",
@@ -61,46 +67,28 @@
     ];//layout is more clear in this manner
     render();
   }
+  initBoard();
 
   function render(){
     board.forEach(function(mark,index){
-      console.log(mark,index);
+      squares[index].textContent = mark ;
     });
   }
-  // Get a reference to the canvas DOM element
-  var canvas = document.getElementById('canvas');
-  // Get the canvas drawing context
-  var context = canvas.getContext('2d');
+  function handleTurn(event){
+    let idx = squares.findIndex(function(square){
+      return square === event.target;
+    });
+    board[id] = turn;
 
+    console.log(board);
 
-
-  // Determine if number a is within the range b to c (exclusive)
-  function isWithin(a, b, c) {
-    return (a > b && a < c);
   }
-  function menu() {
-    erase();
-    context.fillStyle = '#000000';
-    context.font = '36px Arial';
-    context.textAlign = 'center';
-    context.fillText('Tic Tac Toe!', canvas.width / 2, canvas.height / 4);
-    context.font = '24px Arial';
-    context.fillText('Click to Start', canvas.width / 2, canvas.height / 2);
-    context.font = '18px Arial'
-    context.fillText('click on the box to play your turn', canvas.width / 2, (canvas.height / 4) * 3);
-    // Start the game on a click
-    canvas.addEventListener('click', startGame);
-  }
+
+
   // Countdown timer (in seconds)
   var countdown = 30;
-  // ID to track the setTimeout
-  var id = null;
 
-  // Clear the canvas
-  function erase() {
-    context.fillStyle = '#FFFFFF';
-    context.fillRect(0, 0, 600, 400);
-  }
+
 </script>
 
 </head>

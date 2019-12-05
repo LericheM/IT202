@@ -7,4 +7,4 @@ create table if not exists `GameData`(
     `move9` varchar(2), PRIMARY KEY (`id`),
     `pid1` int, `pid2` int
 )
-/*Query to set up intial game table in DB*/
+/*Query to set up intial game table in DB*/`
