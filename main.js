@@ -19,6 +19,8 @@
   // Event Listeners
   document.getElementById('board').addEventListener('click', handleTurn);
   document.getElementById('next-game-button').addEventListener('click', initBoard);
+
+
   // Functions
   function initBoard(){
     board = [
@@ -51,6 +53,8 @@
     });
     messages.textContent = win === 'T' ? `That's a tie, queen!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
   }
+
+  
   function handleTurn(event){
     let idx = squares.findIndex(function(square){
       return square === event.target;
