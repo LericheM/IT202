@@ -26,8 +26,11 @@
     });
     board[idx] = turn;
 
-    console.log(board);
+    turn = turn === 'X' ? 'O' : 'X';
 
+
+    console.log(board);
+    render();
   }
 
 
