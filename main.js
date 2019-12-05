@@ -45,7 +45,7 @@ return winner ? winner : board.includes('') ? null : 'T';
     board.forEach(function(mark,index){
       squares[index].textContent = mark ;``
     });
-    messages.textContent = win === 'T' ? `Tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
+    //messages.textContent = win === 'T' ? `Tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
     console.log(win);
   }
   function handleTurn(event){
