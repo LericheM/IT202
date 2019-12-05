@@ -1,8 +1,11 @@
+//  Variables
   let board;
   let turn = 'x';
   let win;
 
+  // Constants
   const squares = Array.from(document.querySelectorAll('#board div'));
+  const messages = document.querySelector('h2');
   const winningCombos = [
     [0, 1, 2],
     [3, 4, 5],
@@ -13,9 +16,10 @@
     [0, 4, 8],
     [2, 4, 6]
     ];
-  
+  // Event Listeners
   document.getElementById('board').addEventListener('click', handleTurn);
-//todo add back h2 header!
+  document.getElementById('next-game-button').addEventListener('click', init);
+  // Functions
   function initBoard(){
     board = [
       "","","",
@@ -37,7 +41,7 @@
         }
 });
 
-return winner ? winner : board.includes('') ? null : 'T';
+    return winner ? winner : board.includes('') ? null : 'T';
 };
 
 
@@ -45,8 +49,8 @@ return winner ? winner : board.includes('') ? null : 'T';
     board.forEach(function(mark,index){
       squares[index].textContent = mark ;``
     });
-    //messages.textContent = win === 'T' ? `Tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
-    console.log(win);
+    messages.textContent = win === 'T' ? `That's a tie, queen!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
+
   }
   function handleTurn(event){
     let idx = squares.findIndex(function(square){

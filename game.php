@@ -10,6 +10,8 @@
 
 </head>
 <body>
+  <h2>It's X's turn!</h2>
+
   <div class="flex-container flex-column">
   <div class="flex-container flex-wrap" id="board">
   <div class="square"></div>
