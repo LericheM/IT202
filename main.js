@@ -24,7 +24,7 @@
 
   // Functions
   function logout(){
-    window.location.replace("https://web.njit.edu/~ml529/IT202/logout.php");
+    window.location.href("./logout.php");
     //redirect user to a proper php file
   }
   function initBoard(){
