@@ -24,7 +24,7 @@
   <div class="square"></div>
   <div class="square"></div>
 
-  <button id="next-game-button">New Game!</button>
-  <button id="logout">Logout!</button>
+  <button class ="btn"id="next-game-button">New Game!</button>
+  <button class = "btn" id="logout">Logout!</button>
 </body>
 </html>
