@@ -24,7 +24,7 @@
     let idx = squares.findIndex(function(square){
       return square === event.target;
     });
-    board[id] = turn;
+    board[idx] = turn;
 
     console.log(board);
 
