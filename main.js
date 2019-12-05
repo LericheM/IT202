@@ -19,9 +19,14 @@
   // Event Listeners
   document.getElementById('board').addEventListener('click', handleTurn);
   document.getElementById('next-game-button').addEventListener('click', initBoard);
+  document.getElementById('Logout').addEventListener('click',logout);
 
 
   // Functions
+  function logout(){
+    window.location.replace("https://web.njit.edu/~ml529/IT202/logout.php:");
+    //redirect user to a proper php file
+  }
   function initBoard(){
     board = [
       "","","",
@@ -51,7 +56,7 @@
     board.forEach(function(mark,index){
       squares[index].textContent = mark ;``
     });
-    messages.textContent = win === 'T' ? `That's a tie, queen!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
+    messages.textContent = win === 'T' ? `Tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
   }
 
   

@@ -25,5 +25,6 @@
   <div class="square"></div>
 
   <button id="next-game-button">New Game!</button>
+  <button id="logout">Logout!</button>
 </body>
 </html>
