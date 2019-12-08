@@ -26,6 +26,7 @@ function add_user($uname,$pass){
         $r = $stmt->execute([":usr"=>$uname,":pas"=>$hash]);
 
         echo "New user created!";
+        header(location:"./login.php");
     }
     catch(Exception $e){
         $response = "DB Error: " .$e;
