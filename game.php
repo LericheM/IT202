@@ -25,6 +25,6 @@
   <div class="square"></div>
 
   <button class ="btn"id="next-game-button">New Game!</button>
-  <button class = "btn" id="logout">Logout!</button>
+  <button onclick = " location.href = './logout.php';"class = "btn" id="logout">Logout!</button>
 </body>
 </html>

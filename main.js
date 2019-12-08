@@ -23,10 +23,7 @@
 
 
   // Functions
-  function logout(){
-    window.location.href("./logout.php");
-    //redirect user to a proper php file
-  }
+  
   function initBoard(){
     board = [
       "","","",
