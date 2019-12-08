@@ -7,3 +7,7 @@ echo "It's all gone!";
 echo var_export($_SESSION, true);
 header(location:"./registration.php");
 ?>
+<html>
+<p>hi</p>
+
+</html>
