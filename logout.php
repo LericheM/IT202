@@ -5,7 +5,7 @@ session_unset();
 session_destroy();
 echo "It's all gone!";
 echo var_export($_SESSION, true);
-header(location:"./registration.php");
+header("Location: login.php");
 ?>
 <html>
 <p>hi</p>
