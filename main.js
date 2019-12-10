@@ -19,7 +19,7 @@ const winningCombos = [
 // Event Listeners
 document.getElementById('board').addEventListener('click', handleTurn);
 document.getElementById('next-game-button').addEventListener('click', initBoard);
-document.getElementById('Logout').addEventListener('click',logout);
+document.getElementById('logout').addEventListener('click',logout);
 
 
 // Functions
