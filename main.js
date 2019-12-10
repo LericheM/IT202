@@ -21,7 +21,6 @@ document.getElementById('board').addEventListener('click', handleTurn);
 document.getElementById('next-game-button').addEventListener('click', initBoard);
 document.getElementById('logout').addEventListener('click',logout);
 
-//cache test
 // Functions
 
 function initBoard(){
