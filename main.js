@@ -24,11 +24,17 @@ document.getElementById('logout').addEventListener('click',logout);
 // Functions
 
 function initBoard(){
+  if(board){
+    //refresh indexes
+
+  }
+  else{
   board = [
     "","","",
     "","","",
     "","",""
   ];//layout is more clear in this manner
+}
   render();
 }
 initBoard();
@@ -68,16 +74,17 @@ function handleTurn(event){
 
   console.log(board);
   render();
+  sendBoard();
 }
 
-function sendBoard(){
+function sendBoard(response,board){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-      board = this.responseText;
+      response.innerHTML = this.responseText;
     }
   };
   xhttp.open("POST","game.php",true);
-  xhttp.send();
+  xhttp.send(board);
 }
 
