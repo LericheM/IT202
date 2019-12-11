@@ -74,17 +74,17 @@ function handleTurn(event){
 
   console.log(board);
   render();
-  sendBoard();
+  sendBoard(messages);
 }
 
-function sendBoard(response,board){
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-      response.innerHTML = this.responseText;
+function sendBoard(response){
+  $.ajax({
+    type:"POST",
+    url:"./mp.php",
+    data:{gameBoard: board},
+    success: function(){
+      console.log('successful save to db');
     }
-  };
-  xhttp.open("POST","game.php",true);
-  xhttp.send(board);
+  })
 }
 
