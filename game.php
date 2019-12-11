@@ -2,10 +2,7 @@
 header('Cache-Control: no-cache, no-store, must-revalidate');
 header('Pragma: no-cache');
 header('Expires: 0');
-
-if(isset){
-
-}
+// TODO: add an element for text input send to php
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +28,6 @@ if(isset){
   <div class="square"></div>
   <div class="square"></div>
   <div class="square"></div>
-
   <button class ="btn"id="next-game-button">New Game!</button>
   <button onclick = " location.href = './logout.php';"class = "btn" id="logout">Logout!</button>
 </body>
