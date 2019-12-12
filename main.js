@@ -29,7 +29,6 @@ function initBoard(){
     "","","",
     "","",""
   ];//layout is more clear in this manner
-}
   render();
 }
 initBoard();
