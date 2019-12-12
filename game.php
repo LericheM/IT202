@@ -31,7 +31,7 @@ header('Expires: 0');
   <form action="" method = "POST">  
   <input type="text" id = "match_id">
   </form>
-  <button class = "btn" id="find_match">Find Match!/button>
+  <button class = "btn" id="find_match">Find Match!</button>
   <button class ="btn"id="next-game-button">New Game!</button>
   <button onclick = " location.href = './logout.php';"class = "btn" id="logout">Logout!</button>
 </body>
