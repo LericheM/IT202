@@ -28,7 +28,6 @@ header('Expires: 0');
   <div class="square"></div>
   <div class="square"></div>
   <div class="square"></div>
-  <button class = "btn" id="find_match">Find Match!</button>
   <button class ="btn"id="next-game-button">New Game!</button>
   <button onclick = " location.href = './logout.php';"class = "btn" id="logout">Logout!</button>
 </body>
