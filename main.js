@@ -24,13 +24,6 @@ document.getElementById('logout').addEventListener('click',logout);
 // Functions
 
 function initBoard(){
-  if(count(board)){
-    board.forEach(function(index){
-      squares[index].textContent = "";
-    });
-
-  }
-  else{
   board = [
     "","","",
     "","","",
