@@ -25,7 +25,9 @@ document.getElementById('logout').addEventListener('click',logout);
 
 function initBoard(){
   if(board){
-    //refresh indexes
+    board.forEach(function(index){
+      squares[index].textContent = "";
+    });
 
   }
   else{
@@ -56,7 +58,7 @@ function getWinner() {
 
 function render(){
   board.forEach(function(mark,index){
-    squares[index].textContent = mark ;``
+    squares[index].textContent = mark ;
   });
   messages.textContent = win === 'T' ? `Tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
 }
@@ -74,10 +76,10 @@ function handleTurn(event){
 
   console.log(board);
   render();
-  sendBoard(messages);
+  sendBoard();
 }
 
-function sendBoard(response){
+function sendBoard(){
   $.ajax({
     type:"POST",
     url:"./mp.php",
