@@ -19,7 +19,7 @@ function send_db($game_board){
     //take text version of game board and translate it into a form for db
     $db = new PDO($conn_string, $username, $password);
     $db_query = "INSERT INTO `GameData`(square1,square2,square3,
-    square4,square5,square6,square7,square8)
+    square4,square5,square6,square7,square8,square9)
     VALUES(:m0,:m1,:m2,:m3,:m4,:m5,:m6,:m7,:m8)";
     $securedArr = array(":m0"=>$m0,":m1"=>$m1, ":m2"=>$m2,
     ":m3"=>$m3,":m4"=>$m4,":m5"=>$m5,

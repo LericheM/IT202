@@ -21,7 +21,7 @@ function add_user($uname,$pass){
         $hash = password_hash($pass, PASSWORD_BCRYPT);
         $db = new PDO($conn_string, $username, $password);
         $insert_query = "INSERT INTO `Players` (username,token)
-        VALUES (:usr,:pas)";
+        VALUES(:usr,:pas)";
         $stmt = $db->prepare($insert_query);
         $r = $stmt->execute([":usr"=>$uname,":pas"=>$hash]);
 
