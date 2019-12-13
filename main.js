@@ -83,13 +83,12 @@ function saveBoard(){
 }
 
 function sendBoard(b_id){
-  $.ajax({
-    type:"POST",
-    url:"./mp.php",
-    data:{gameBoard: board,match_id:b_id},
-    success: function(){console.log("success");
+  $(".square").post("./mp.php",
+  {gameBoard: board,match_id:b_id},
+    function(){
+      alert("Board sent");
     }
-  })
+  );
 }
 
 
