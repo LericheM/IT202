@@ -16,14 +16,16 @@ const winningCombos = [
   [2, 4, 6]
   ];
 // Event Listeners
-document.getElementById('board').addEventListener('click', handleTurn);
 document.getElementById('next-game-button').addEventListener('click', initBoard);
 document.getElementById('logout').addEventListener('click',logout);
+function enableClick(){
+  document.getElementById('board').addEventListener('click', handleTurn);
+}
 
-//cache test
 // Functions
 
 function initBoard(){
+  enableClick();
   board = [
     "","","",
     "","","",
@@ -45,6 +47,7 @@ function getWinner() {
 });
   winner ? winner : board.includes('') ? null : 'T';
   if(winner){
+    document.getElementById('board').removeEventListener('click', handleTurn);
     $.ajax({method:'POST',url: "mp.php",data:{brd:board.toString()}, success: function(result){
       $("#bot").html(result);
     }});
