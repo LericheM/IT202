@@ -45,7 +45,7 @@ function getWinner() {
 });
   winner ? winner : board.includes('') ? null : 'T';
   if(winner){
-    $.ajax({method:'POST',url: "mp.php",data:{brd:board}, success: function(result){
+    $.ajax({method:'POST',url: "mp.php",data:{brd:board.toString()}, success: function(result){
       $("#bot").html(result);
     }});
   }
