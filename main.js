@@ -2,6 +2,7 @@
 let board;
 let turn = 'x';
 let win;
+let id;
 
 // Constants
 const squares = Array.from(document.querySelectorAll('#board div'));
@@ -44,8 +45,9 @@ function getWinner() {
           winner = board[combo[0]];
       }
 });
-
-  return winner ? winner : board.includes('') ? null : 'T';
+  win = winner ? winner : board.includes('') ? null : 'T';
+  return win;
+  saveBoard();
 };
 
 
@@ -71,14 +73,38 @@ function handleTurn(event){
   render();
 }
 
-function sendBoard(){
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-      board = this.responseText;
-    }
-  };
-  xhttp.open("POST","game.php",true);
-  xhttp.send();
+function saveBoard(){
+  if(win){
+    id = $("#id").blur(function(){
+      $("#id").val();
+    });
+    sendBoard(id);
+  }
 }
+
+function sendBoard(b_id){
+  $.ajax({
+    type:"POST",
+    url:"./mp.php",
+    data:{gameBoard: board,match_id:b_id},
+    success: function(){console.log("success");
+    }
+  })
+}
+
+
+
+// function findMatch(){
+//   let match_id = document.getElementById("id").value;
+//   $.ajax({
+//     type:"POST",
+//     url:"./mp.php",
+//     data:{"match_id":match_id},
+//     success: sendBoard()
+//     }
+//   );
+  
+
+// }
+// $("findmatch").click(function(){findMatch();});
 
