@@ -15,9 +15,9 @@ function send_db($game_board){
     $board = $game_board;
     $moves = explode(",",$board);
     print_r($moves);
-    $m0 = $board[0];$m1 = $board[2];$m2 = $board[4];
-    $m3 = $board[6]; $m4 = $board[8];$m5 = $board[10];
-    $m6 = $board[12];$m7 = $board[14];$m8 = $board[16];
+    if($m0){$m0 = $board[0]};if($m1){$m1 = $board[1]};if($m2){$m2 = $board[2]};
+    if($m3){$m3 = $board[3]}; if($m4){$m4= $board[4]};if($m5){$m5 = $board[5]};
+    if($m6){$m6 = $board[6]}; if($m7){$m7= $board[7]};if($m8){$m8 = $board[8]};
     //take text version of game board and translate it into a form for db
     $db = new PDO($conn_string, $username, $password);
     $db_query = "INSERT INTO `GameData`(square1,square2,square3,
@@ -28,7 +28,6 @@ function send_db($game_board){
     ":m6"=>$m6,":m7"=>$m7,":m8"=>$m8);
     $stmt = $db->prepare($db_query);
     $r = $stmt->execute($securedArr); //FINISH THIS
-    echo "game saved!";
     }
     catch(Exception $e){
         $response = "DB Error:".$e;
