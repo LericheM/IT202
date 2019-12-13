@@ -51,6 +51,7 @@ function getWinner() {
     $.ajax({method:'POST',url: "mp.php",data:{brd:board.toString()}, success: function(result){
       $("#bot").html(result);
     }});
+    render();
   }
 };
 
