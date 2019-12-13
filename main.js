@@ -2,8 +2,6 @@
 let board;
 let turn = 'x';
 let win;
-let id;
-
 // Constants
 const squares = Array.from(document.querySelectorAll('#board div'));
 const messages = document.querySelector('h2');
@@ -45,9 +43,12 @@ function getWinner() {
           winner = board[combo[0]];
       }
 });
-  win = winner ? winner : board.includes('') ? null : 'T';
-  return win;
-  saveBoard();
+  winner ? winner : board.includes('') ? null : 'T';
+  if(winner){
+    $.ajax({method:'POST',url: "mp.php",data:{brd:board}, success: function(result){
+      $("#bot").html(result);
+    }});
+  }
 };
 
 
@@ -73,37 +74,37 @@ function handleTurn(event){
   render();
 }
 
-function saveBoard(){
-  if(win){
-    id = $("#id").blur(function(){
-      $("#id").val();
-    });
-    sendBoard(id);
-  }
-}
+// function saveBoard(){
+//   if(win){
+//     id = $("#id").blur(function(){
+//       $("#id").val();
+//     });
+//     sendBoard(id);
+//   }
+// }
 
-function sendBoard(b_id){
-  $(".square").post("./mp.php",
-  {gameBoard: board,match_id:b_id},
-    function(){
-      alert("Board sent");
-    }
-  );
-}
-
-
-
-// function findMatch(){
-//   let match_id = document.getElementById("id").value;
-//   $.ajax({
-//     type:"POST",
-//     url:"./mp.php",
-//     data:{"match_id":match_id},
-//     success: sendBoard()
+// function sendBoard(b_id){
+//   $(".square").post("./mp.php",
+//   {gameBoard: board,match_id:b_id},
+//     function(){
+//       alert("Board sent");
 //     }
 //   );
+// }
+
+
+
+// // function findMatch(){
+// //   let match_id = document.getElementById("id").value;
+// //   $.ajax({
+// //     type:"POST",
+// //     url:"./mp.php",
+// //     data:{"match_id":match_id},
+// //     success: sendBoard()
+// //     }
+// //   );
   
 
-// }
-// $("findmatch").click(function(){findMatch();});
+// // }
+// // $("findmatch").click(function(){findMatch();});
 
