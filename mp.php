@@ -5,7 +5,6 @@ session_start();
 
 if(isset($_POST["brd"])){
     $board = $_POST["brd"];
-    echo $board;
     send_db($board);
 }
 
