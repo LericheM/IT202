@@ -12,6 +12,7 @@ function send_db($game_board){
     require('conf.php');
     $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
     try{
+    $board = $game_board;
     $moves = explode(",",$board);
     $m0 = $board[0];$m1 = $board[1];$m2 = $board[2];
     $m3 = $board[3]; $m4 = $board[4];$m5 = $board[5];
