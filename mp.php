@@ -5,8 +5,8 @@ session_start();
 
 if(isset($_POST["brd"])){
     $board = $_POST["brd"];
-     echo $board;
-    //send_db($board);
+    echo $board;
+    send_db($board);
 }
 
 function send_db($game_board){
@@ -25,7 +25,8 @@ function send_db($game_board){
     $securedArr = array(":m0"=>$m0,":m1"=>$m1, ":m2"=>$m2,
     ":m3"=>$m3,":m4"=>$m4,":m5"=>$m5,
     ":m6"=>$m6,":m7"=>$m7,":m8"=>$m8);
-    $r = $stmt-> execute($securedArr); //FINISH THIS
+    $stmt = $db->prepare($db_query);
+    $r = $stmt->execute($securedArr); //FINISH THIS
     echo "game saved!";
     }
     catch(Exception $e){
