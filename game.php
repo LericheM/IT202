@@ -32,7 +32,6 @@ header('Expires: 0');
 
   <button class ="btn"id="next-game-button">New Game!</button>
   <input id="id" name = "id" type="text">Enter Match ID!</>
-  <button class = "btn" id= "find_match" onclick= "findMatch()">Find Match</button>
   <button onclick = " location.href = './logout.php';"class = "btn" id="logout">Logout!</button>
 </body>
 </html>
