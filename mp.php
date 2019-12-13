@@ -15,18 +15,18 @@ function send_db($game_board){
     $board = $game_board;
     $moves = explode(",",$board);
     print_r($moves);
-    echo $UID = $_SESSION['user']['id'];
+    $UID = $_SESSION['user']['id'];
     $m0 = $board[0];$m1 = $board[1];$m2 = $board[2];
     $m3 = $board[3]; $m4 = $board[4];$m5 = $board[5];
     $m6 = $board[6];$m7 = $board[7];$m8 = $board[8];
     //take text version of game board and translate it into a form for db
     $db = new PDO($conn_string, $username, $password);
     $db_query = "INSERT INTO `GameData`(square1,square2,square3,
-    square4,square5,square6,square7,square8,square9)
-    VALUES(:m0,:m1,:m2,:m3,:m4,:m5,:m6,:m7,:m8)";
+    square4,square5,square6,square7,square8,square9,pid1)
+    VALUES(:m0,:m1,:m2,:m3,:m4,:m5,:m6,:m7,:m8,:pid1)";
     $securedArr = array(":m0"=>$m0,":m1"=>$m1, ":m2"=>$m2,
     ":m3"=>$m3,":m4"=>$m4,":m5"=>$m5,
-    ":m6"=>$m6,":m7"=>$m7,":m8"=>$m8);
+    ":m6"=>$m6,":m7"=>$m7,":m8"=>$m8,":pid1"=>$UID);
     $stmt = $db->prepare($db_query);
     $r = $stmt->execute($securedArr); //FINISH THIS
     }
