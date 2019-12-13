@@ -6,11 +6,12 @@ $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 
 if(isset($_POST["brd"])){
     $board = $_POST["brd"];
-    echo $board;
-    //send_db($board);
+    // echo $board;
+    send_db($board);
 }
 
 function send_db($game_board){
+    try{
     $moves = explode(",",$board);
     $m0 = $board[0];$m1 = $board[1];$m2 = $board[2];
     $m3 = $board[3]; $m4 = $board[4];$m5 = $board[5];
@@ -20,7 +21,16 @@ function send_db($game_board){
     $db_query = "INSERT INTO `GameData`(square1,square2,square3,
     square4,square5,square6,square7,square8)
     VALUES(:m0,:m1,:m2,:m3,:m4,:m5,:m6,:m7,:m8)";
-    $stmt = $db; //FINISH THIS
+    $securedArr = array(":m0"=>$m0,":m1"=>$m1, ":m2"=>$m2,
+    ":m3"=>$m3,":m4"=>$m4,":m5"=>$m5,
+    ":m6"=>$m6,":m7"=>$m7,":m8"=>$m8);
+    $r = $stmt-> execute($securedArr); //FINISH THIS
+    echo "game saved!";
+    }
+    catch(Exception $e){
+        $response = "DB Error:".$e;
+        echo $response;
+    }
 }
 
 
