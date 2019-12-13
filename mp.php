@@ -15,9 +15,9 @@ function send_db($game_board){
     $board = $game_board;
     $moves = explode(",",$board);
     echo $moves[1];
-    $m0 = $board[0];$m1 = $board[1];$m2 = $board[2];
-    $m3 = $board[3]; $m4 = $board[4];$m5 = $board[5];
-    $m6 = $board[6];$m7 = $board[7];$m8 = $board[8];
+    $m0 = $board[0];$m1 = $board[2];$m2 = $board[4];
+    $m3 = $board[6]; $m4 = $board[8];$m5 = $board[10];
+    $m6 = $board[12];$m7 = $board[14];$m8 = $board[16];
     //take text version of game board and translate it into a form for db
     $db = new PDO($conn_string, $username, $password);
     $db_query = "INSERT INTO `GameData`(square1,square2,square3,
