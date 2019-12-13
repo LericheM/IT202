@@ -14,7 +14,7 @@ function send_db($game_board){
     try{
     $board = $game_board;
     $moves = explode(",",$board);
-    echo $moves[1];
+    print_r($moves);
     $m0 = $board[0];$m1 = $board[2];$m2 = $board[4];
     $m3 = $board[6]; $m4 = $board[8];$m5 = $board[10];
     $m6 = $board[12];$m7 = $board[14];$m8 = $board[16];
