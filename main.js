@@ -47,11 +47,11 @@ function getWinner() {
 });
   winner ? winner : board.includes('') ? null : 'T';
   if(winner){
+    render();
     document.getElementById('board').removeEventListener('click', handleTurn);
     $.ajax({method:'POST',url: "mp.php",data:{brd:board.toString()}, success: function(result){
       $("#bot").html(result);
     }});
-    render();
   }
 };
 
