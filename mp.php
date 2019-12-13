@@ -1,8 +1,7 @@
 <?php
 session_start();
 // create a board, generate a match history
-require('conf.php');
-$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
+
 
 if(isset($_POST["brd"])){
     $board = $_POST["brd"];
@@ -11,6 +10,8 @@ if(isset($_POST["brd"])){
 }
 
 function send_db($game_board){
+    require('conf.php');
+    $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
     try{
     $moves = explode(",",$board);
     $m0 = $board[0];$m1 = $board[1];$m2 = $board[2];
