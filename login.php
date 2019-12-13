@@ -16,6 +16,7 @@
 	try{
 		$db = new PDO($conn_string, $username, $password);
         $select_query = "SELECT * FROM Players WHERE username = :usr";
+        $stmt = $db->prepare($select_query);
 		$r = $stmt->execute(array(":usr"=>$user_input));
         $results = $stmt->fetch(PDO::FETCH_ASSOC);
         // print_r($stmt->errorInfor());
